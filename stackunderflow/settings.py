@@ -131,12 +131,15 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_THROTTLE_CLASSES': [
         'rest_framework.throttling.AnonRateThrottle',
-        'rest_framework.throttling.UserRateThrottle'
+        'rest_framework.throttling.UserRateThrottle',
+        'rest_framework.throttling.ScopedRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
         'anon': '100/day',
         'user': '2/day',
+        'question-scope': '10/day',
         'question': '4/day',
+        'question-get': '10/day',
         'question-post': '2/day',
         'question-put': '2/day',
         'question-patch': '2/day',
